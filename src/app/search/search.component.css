@@ -1,0 +1,184 @@
+/* .menuList li {
+    display: inline;
+    padding: 0px 15px;
+    font-weight: 500;
+  }
+  .searchbox{
+    border-top: 2px solid #52a653;
+    border-radius: 0px;
+    position: absolute;
+    top: 100%;
+    right: -20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    transform: translate3d(0, 20px, 0);
+    -webkit-transform: translate3d(0, 20px, 0);
+    width: 342px;
+    margin-top: 15px;
+    z-index: 1;
+  }
+  .searchbox::before{
+    position: absolute;
+    top: -8px;
+    right: 6px;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5.5px 6px 5.5px;
+    border-color: transparent transparent #52a653 transparent;
+  }
+
+  @media screen and (max-width:991px) {
+    .menuList li {
+
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      border-bottom: 0.5px solid #e9e9e9;
+      padding: 0px 11px;
+    }
+    .menuList li:last-child {
+      border: none !important;
+    }
+
+    .menuList li a i {
+      font-size: 1.2rem;
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+    }
+
+  }
+
+
+  .loginmodalcss .modal-dialog {
+    max-width: 40%;
+  }
+  .loginmodalcss .modal-dialog-slideout {
+    min-height: 100%;
+    margin: 0 0 0 auto;
+    background: #fff;
+  }
+  .modal.fade.loginmodalcss .modal-dialog.modal-dialog-slideout {
+    -webkit-transform: translate(100%, 0)scale(1);
+    transform: translate(100%, 0)scale(1);
+  }
+  .modal.fade.loginmodalcss.show .modal-dialog.modal-dialog-slideout {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    display: flex;
+    align-items: stretch;
+    -webkit-box-align: stretch;
+    height: 100%;
+  }
+  .modal.fade.loginmodalcss.show .modal-dialog.modal-dialog-slideout .modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .loginmodalcss .modal-dialog-slideout .modal-content {
+    border: 0;
+  }
+  .loginmodalcss .modal-dialog-slideout .modal-header,
+  .loginmodalcss .modal-dialog-slideout .modal-footer {
+    height: 4rem;
+    display: block;
+  }
+
+  .logo-img{
+    max-width: 67%;
+  }
+  .one-megh{
+    max-width: 150px;
+  }
+  .width200px{
+    width: 200px;
+  }
+
+  .iw-90{
+    width: 204px;
+    margin-top: 1px;
+  }
+  .iw-90:hover{
+    opacity: 0.7;
+    }
+  .sign-btn{
+    padding: 0.69rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .cst-btn-t{
+    width: 38px;
+    padding: 3px 3px !important;
+    height: 38px;
+    display: block;
+    border-radius: 2px;
+    background: #fff !important;
+    border-radius: 10px;
+    border-color: #c1c1c1;
+}
+
+    @media screen and (max-width:992px) {
+      .menuList li a {
+        padding: 15px 10px;
+        display: block;
+      }
+      .menu-mob a {
+      text-align: left;
+      }
+      .offcanvas {
+        max-width: 75%;
+      }
+
+
+    }
+.fnt{
+  font-size: 1.1rem;
+}
+
+    .bgs{
+      background: #d3f6ee;
+      width: 100%;
+    }
+
+    .drop-cst{
+      min-width: 138px;
+      margin-left: 16px;
+      padding: 0px;
+      border-radius: 0px;
+      margin-top: 0px;
+    }
+    .drop-cst a{
+  font-size: 0.8rem;
+  padding: 7px 9px;
+    }
+    .drop-cst i{
+    font-size: 0.9rem;
+  }
+
+  .cst-drop-mn .dropdown-item{
+    font-size: 0.8rem;
+    padding: 9px 10px;
+    transition: 0.3s;
+    border-bottom: 1px solid #ddd;
+  } */
+
+/* Custom styles for the rounded dropdown toggle */
+.rounded-circle {
+  border-radius: 50%;
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  line-height: 40px; /* Adjust line height to center text vertically */
+  text-align: center;
+  background-color: #007bff; /* Adjust background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  display: inline-block;
+  text-decoration: none; /* Add this line to remove underline from the link */
+}
+
+.rounded-circle:hover {
+  background-color: #0056b3; /* Adjust hover background color as needed */
+}
+

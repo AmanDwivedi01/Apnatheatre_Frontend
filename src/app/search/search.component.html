@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary"  style="background-color: #ddc7ca;">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class=" rounded-circle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" [style.background-color]="this.backgroundColor">
+            {{this.name | slice:0:3 | uppercase}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      
+       
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="
+        margin: auto;
+        margin-right: 1rem; ">
+        {{ selectedOption ? selectedOption : 'Options' }}
+        </button>
+        <ul class="dropdown-menu">
+          <!-- <li><button class="dropdown-item" type="button" (click)="selectOption('Year')">Year</button></li> -->
+          <li><button class="dropdown-item" type="button" (click)="selectOption('Title')">Title</button></li>
+          <li><button class="dropdown-item" type="button"(click)="selectOption('IMDb ID')">IMDb ID</button></li>
+        </ul>
+      </div>
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" [placeholder]="searchPlaceholder" aria-label="Search"  name="search"  [(ngModel)]="value">
+        <button class="btn btn-outline-success" type="submit"
+        (click)="search()">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  <div class="row">
+  <!-- <div class="col-md-6 ">
+  <div class="row g-0 border m-2">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="..." width="250px" height="350px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="col-md-6">
+  <div class="row g-0 border m-2">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="..." width="250px" height="350px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="col-md-6">
+  <div class="row g-0 border m-2">
+    <div class="col-md-4">
+      <img src="" class="img-fluid rounded-start" alt="..." width="250px" height="350px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let movie of responseArray">
+  <div class="block-4 text-center border">
+      <img src="{{movie.Poster}}" width="250px" height="350px" />
+    <div class="block-4-text p-4">
+      <h3><a href="">{{movie.Title}}</a></h3>
+      <p class="mb-0">{{movie.Year}}</p>
+      <p class="text-primary font-weight-bold"></p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
