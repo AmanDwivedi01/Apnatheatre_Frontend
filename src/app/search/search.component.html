@@ -1,13 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary"  style="background-color: #ddc7ca;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary position-fixed top-0 left-0 right-0 w-100"  style="background-color: #ddc7ca;">
   <div class="container-fluid">
-    <a class="navbar-brand " href="#">Navbar</a>
+    <!-- <div class="d-flex justify-content-center">
+      <a class="navbar-brand " href="#">Navbar</a>
+    </div> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#" style="padding-right: 2rem">Home</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -17,15 +19,17 @@
             {{this.name | slice:0:3 | uppercase}}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Playlist</a></li>
+            <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
         </li>
       </ul>
 
-      
+      <div class="container d-flex justify-content-center  " style="padding-left: 12rem;">
+        <a class="navbar-brand border border-dark border-2 p-3 display-6">APNA THEATRE</a>
+      </div>
        
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="
@@ -48,56 +52,13 @@
     </div>
   </div>
 </nav>
-  <div class="row">
-  <!-- <div class="col-md-6 ">
-  <div class="row g-0 border m-2">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="..." width="250px" height="350px">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <div class="col-md-6">
-  <div class="row g-0 border m-2">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="..." width="250px" height="350px">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <div class="col-md-6">
-  <div class="row g-0 border m-2">
-    <div class="col-md-4">
-      <img src="" class="img-fluid rounded-start" alt="..." width="250px" height="350px">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
+  <div class="row" style="margin-top: 8rem;">
+  
 <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let movie of responseArray">
   <div class="block-4 text-center border">
       <img src="{{movie.Poster}}" width="250px" height="350px" />
     <div class="block-4-text p-4">
-      <h3><a href="">{{movie.Title}}</a></h3>
+      <h3><a (click)="details(movie.imdbID)">{{movie.Title}}</a></h3>
       <p class="mb-0">{{movie.Year}}</p>
       <p class="text-primary font-weight-bold"></p>
     </div>

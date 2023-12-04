@@ -9,13 +9,15 @@ import { LoginComponent } from './login/login.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
-import { FormService } from './Service/form.service'
+import { FormService } from './Service/form.service';
+import { DetailsComponent } from './details/details.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SearchComponent,
+    DetailsComponent,
     
   ],
   imports: [

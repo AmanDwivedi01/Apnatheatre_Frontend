@@ -149,10 +149,11 @@ export class LoginComponent {
           this.appName=response.data.name;
           console.log(this.id);
             this.toastrService.success(response.data.msg, '', { timeOut: 3000, positionClass: "toast-top-center", closeButton: true, tapToDismiss: true });
-            let data='id='+this.id+'&email='+this.appemail+'&name='+this.appName;
+            let data=JSON.stringify('id='+this.id+'&email='+this.appemail+'&name='+this.appName);
             // let encriptUrl = ;
             // console.log(encriptUrl);
-            this.router.navigateByUrl('/search?'+ this.formService.encrypt(data));
+            let encryptedUrl = this.formService.encrypt(data)
+            this.router.navigateByUrl(`/search?${encryptedUrl}`);
           }
         },
       (error: any) => {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormService } from '../Service/form.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -20,9 +20,11 @@ export class SearchComponent {
   email:string | null = null;
   id:any;
   data:any={};
+  decdata:string='';
   name:string | null = null;
   userdata:any={};
   backgroundColor:any;
+  ids: number=0;
   // http: any;
   //  data = {
   //   id: 1,
@@ -36,44 +38,53 @@ export class SearchComponent {
     private formService:FormService,
   )
   {
-
   }
-
  ngOnInit()
  {
-
-  // return;
-  let route = this.router.url.split("?")
-    console.log(route);
-    this.router_name = route[1]
-    console.log(this.router_name);
-    let data = this.formService.decrypt(this.router_name)
-    console.log("decrypt",data)
-    const params = new URLSearchParams(data);
-      this.id = params.get('id');
-      this.email = params.get('email');
-      this.name = params.get('name');
-      console.log('ID:', this.id);
-      console.log('Email:', this.email);
-      console.log('Name:',this.name);
-      this.name='AMAN'
-      this.backgroundColor=this.randomColor();
+  this.route.queryParams.subscribe((encryptedUrl: any) => {
+    let decryptedUrl: string = JSON.parse(this.formService.decrypt(encryptedUrl));
+    let params = decryptedUrl.split('&');
+    console.log(params);
+    params.forEach((param: string) => {
+      let [key, val] = param.split('=');
+      if(key==='id')
+      {
+        this.id=val;
+      }
+      if(key==='email')
+      {
+        this.email=val;
+      }
+      if(key==='name')
+      {
+        this.name=val;
+      }
+    }
+    )
+    console.log(this.id);
+    console.log(this.email);
+    console.log(this.name);
+  })
  }
-
  selectOption(option: string) {
   this.selectedOption = option;
  if (option === 'Title')
  {
     this.searchPlaceholder = 'Enter title to search';
-    this.id=1;
+    this.ids=1;
  }
    else if (option === 'IMDb ID') 
    {
     this.searchPlaceholder = 'Enter IMDb ID to search';
-    this.id=2;
+    this.ids=2;
   }
 }
-
+details(imd:string)
+{
+  let data=JSON.stringify('id='+this.id+'&email='+this.email+'&name='+this.name+'&imdbid='+imd);
+  let encryptedUrl = this.formService.encrypt(data)
+  this.router.navigateByUrl(`/details?${encryptedUrl}`);
+}
 randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
@@ -100,7 +111,7 @@ else
     }),
   };
    this.data={
-  id:this.id,
+  id:this.ids,
   title: this.value,
 }
   console.log('hit')

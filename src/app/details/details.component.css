@@ -1,0 +1,16 @@
+.rounded-circle {
+    border-radius: 50%;
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    line-height: 40px; /* Adjust line height to center text vertically */
+    text-align: center;
+    background-color: #007bff; /* Adjust background color as needed */
+    color: #fff; /* Adjust text color as needed */
+    display: inline-block;
+    text-decoration: none; /* Add this line to remove underline from the link */
+  }
+  
+  .rounded-circle:hover {
+    background-color: #0056b3; /* Adjust hover background color as needed */
+  }
+  
